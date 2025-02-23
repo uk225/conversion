@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/22/2025  17:59:48  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/23/2025  09:52:39  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
@@ -24,17 +24,17 @@ LINK MAP OF MODULE:  .\Objects\conversion (?C_STARTUP)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     0004H     UNIT         _DATA_GROUP_
-            IDATA   000CH     0001H     UNIT         ?STACK
+            DATA    0008H     0006H     UNIT         _DATA_GROUP_
+            IDATA   000EH     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
                     0003H     07FDH                  *** GAP ***
             CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
-            CODE    08F6H     0027H     UNIT         ?PR?_CONVERTTOASCII?ASCIITOBCD
-            CODE    091DH     0019H     UNIT         ?PR?MAIN?MAIN
-            CODE    0936H     000DH     UNIT         ?PR?_CONVERTTOBCD?ASCIITOBCD
-            CODE    0943H     000CH     UNIT         ?C_C51STARTUP
+            CODE    08F6H     0028H     UNIT         ?PR?MAIN?MAIN
+            CODE    091EH     0027H     UNIT         ?PR?_CONVERTTOASCII?ASCIITOBCD
+            CODE    0945H     000DH     UNIT         ?PR?_CONVERTTOBCD?ASCIITOBCD
+            CODE    0952H     000CH     UNIT         ?C_C51STARTUP
 
 
 
@@ -47,10 +47,11 @@ SEGMENT                                  DATA_GROUP
 ?C_C51STARTUP                          -----    -----
   +--> ?PR?MAIN?MAIN
 
-?PR?MAIN?MAIN                          0008H    0002H
+?PR?MAIN?MAIN                          0008H    0004H
   +--> ?PR?_CONVERTTOASCII?ASCIITOBCD
+  +--> ?PR?_CONVERTTOBCD?ASCIITOBCD
 
-?PR?_CONVERTTOASCII?ASCIITOBCD         000AH    0002H
+?PR?_CONVERTTOASCII?ASCIITOBCD         000CH    0002H
 
 
 
@@ -58,13 +59,13 @@ SYMBOL TABLE OF MODULE:  .\Objects\conversion (?C_STARTUP)
 
   VALUE           TYPE          NAME
   ----------------------------------
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/23/2025  09:52:39  PAGE 2
 
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/22/2025  17:59:48  PAGE 2
 
 
   -------         MODULE        ?C_STARTUP
-  C:0943H         SEGMENT       ?C_C51STARTUP
-  I:000CH         SEGMENT       ?STACK
+  C:0952H         SEGMENT       ?C_C51STARTUP
+  I:000EH         SEGMENT       ?STACK
   C:0000H         PUBLIC        ?C_STARTUP
   D:00E0H         SYMBOL        ACC
   D:00F0H         SYMBOL        B
@@ -73,7 +74,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\conversion (?C_STARTUP)
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
   N:0080H         SYMBOL        IDATALEN
-  C:0946H         SYMBOL        IDATALOOP
+  C:0955H         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
   N:0100H         SYMBOL        PBPSTACKTOP
   N:0000H         SYMBOL        PDATALEN
@@ -82,47 +83,53 @@ SYMBOL TABLE OF MODULE:  .\Objects\conversion (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-  C:0943H         SYMBOL        STARTUP1
+  C:0952H         SYMBOL        STARTUP1
   N:0000H         SYMBOL        XBPSTACK
   N:0000H         SYMBOL        XBPSTACKTOP
   N:0000H         SYMBOL        XDATALEN
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         126
-  C:0943H         LINE#         133
-  C:0945H         LINE#         134
-  C:0946H         LINE#         135
-  C:0947H         LINE#         136
-  C:0949H         LINE#         185
-  C:094CH         LINE#         196
+  C:0952H         LINE#         133
+  C:0954H         LINE#         134
+  C:0955H         LINE#         135
+  C:0956H         LINE#         136
+  C:0958H         LINE#         185
+  C:095BH         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
   -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
-  C:091DH         PUBLIC        main
+  C:08F6H         PUBLIC        main
   -------         PROC          MAIN
   -------         DO            
   D:0007H         SYMBOL        packed_bcd
-  D:0008H         SYMBOL        as
+  D:0008H         SYMBOL        higher
+  D:0009H         SYMBOL        lower
+  D:000AH         SYMBOL        as
   -------         ENDDO         
-  C:091DH         LINE#         3
-  C:091DH         LINE#         4
-  C:091DH         LINE#         6
-  C:091FH         LINE#         8
-  C:092FH         LINE#         10
-  C:0932H         LINE#         11
-  C:0935H         LINE#         13
+  C:08F6H         LINE#         3
+  C:08F6H         LINE#         4
+  C:08F6H         LINE#         6
+  C:08F8H         LINE#         7
+  C:08FBH         LINE#         8
+  C:08FEH         LINE#         10
+  C:090EH         LINE#         12
+  C:0911H         LINE#         13
+  C:0914H         LINE#         16
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/23/2025  09:52:39  PAGE 3
+
+
+  C:091DH         LINE#         20
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
   -------         MODULE        ASCIITOBCD
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:0936H         PUBLIC        _converttobcd
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/22/2025  17:59:48  PAGE 3
-
-
-  C:08F6H         PUBLIC        _converttoascii
+  C:0945H         PUBLIC        _converttobcd
+  C:091EH         PUBLIC        _converttoascii
   -------         PROC          _CONVERTTOBCD
   D:0007H         SYMBOL        high_byte
   D:0005H         SYMBOL        low_byte
@@ -130,24 +137,24 @@ SYMBOL TABLE OF MODULE:  .\Objects\conversion (?C_STARTUP)
   D:0007H         SYMBOL        a
   D:0006H         SYMBOL        b
   -------         ENDDO         
-  C:0936H         LINE#         5
-  C:0936H         LINE#         6
-  C:0936H         LINE#         8
-  C:093DH         LINE#         9
-  C:0940H         LINE#         10
-  C:0942H         LINE#         11
+  C:0945H         LINE#         5
+  C:0945H         LINE#         6
+  C:0945H         LINE#         8
+  C:094CH         LINE#         9
+  C:094FH         LINE#         10
+  C:0951H         LINE#         11
   -------         ENDPROC       _CONVERTTOBCD
   -------         PROC          _CONVERTTOASCII
   D:0005H         SYMBOL        packed_bcd
   -------         DO            
-  D:000AH         SYMBOL        ac
+  D:000CH         SYMBOL        ac
   -------         ENDDO         
-  C:08F6H         LINE#         12
-  C:08F8H         LINE#         13
-  C:08F8H         LINE#         16
-  C:090FH         LINE#         17
-  C:0916H         LINE#         18
-  C:091CH         LINE#         19
+  C:091EH         LINE#         12
+  C:0920H         LINE#         13
+  C:0920H         LINE#         16
+  C:0937H         LINE#         17
+  C:093EH         LINE#         18
+  C:0944H         LINE#         19
   -------         ENDPROC       _CONVERTTOASCII
   -------         ENDMOD        ASCIITOBCD
 
@@ -155,12 +162,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\conversion (?C_STARTUP)
   C:08D0H         PUBLIC        ?C?COPY
   -------         ENDMOD        ?C?COPY
 
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CONVERTTOBCD?ASCIITOBCD
-
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 005CH BYTE ( 4%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 006BH BYTE ( 5%) *
 ******************************************************************************
 
-Program Size: data=13.0 xdata=0 code=338
-LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
+Program Size: data=15.0 xdata=0 code=353
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
